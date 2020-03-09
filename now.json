@@ -1,0 +1,5 @@
+{
+  "env": {
+    "AIRTABLE_API": "@svrls-pwd-airtable-api"
+  }
+}
