@@ -109,11 +109,19 @@ const Home = props => {
         <meta name="og:url" content="https://journal.ericadamski.dev" />
         <meta
           name="description"
-          content="My personal journal, daily entries about what is going on in my life. It's written for me, not you. You're welcome to read it."
+          content={
+            current
+              ? current.fields.entry
+              : "My personal journal, daily entries about what is going on in my life. It's written for me, not you. You're welcome to read it."
+          }
         />
         <meta
           name="og:description"
-          content="My personal journal, daily entries about what is going on in my life. It's written for me, not you. You're welcome to read it."
+          content={
+            current
+              ? current.fields.entry
+              : "My personal journal, daily entries about what is going on in my life. It's written for me, not you. You're welcome to read it."
+          }
         />
         <meta
           name="og:image"
