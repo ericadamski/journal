@@ -1,6 +1,7 @@
 import Airtable from "airtable";
 
-Airtable.configure({ apiKey: process.env.AIRTABLE_API });
+// Airtable.configure({ apiKey: process.env.AIRTABLE_API });
+Airtable.configure({ apiKey: "keyjQPg8aDnzROe9k" });
 
 let _base;
 
@@ -36,9 +37,9 @@ function add({ rating, entry }) {
           }
         }
       ],
-      (err, records) => {
+      (err, [record]) => {
         if (err) return reject(err);
-        resolve(records);
+        resolve(record._rawJson);
       }
     );
   });

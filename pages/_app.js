@@ -1,6 +1,10 @@
+import { AnimatePresence } from "framer-motion";
+
 export default ({ Component, pageProps }) => (
   <>
-    <Component {...pageProps} />
+    <AnimatePresence exitBeforeEnter>
+      <Component {...pageProps} />
+    </AnimatePresence>
     <style global jsx>{`
       :root {
         --pink: #ffd5e5; //#e7008a;
