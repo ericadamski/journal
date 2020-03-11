@@ -345,7 +345,7 @@ const Home = props => {
   );
 };
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   return {
     props: {
       entries: await Journal.list()
