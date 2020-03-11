@@ -47,7 +47,6 @@ const Home = props => {
 
   const current =
     router.query.id && entries.find(entry => entry.id === router.query.id);
-  const currentPostDate = current?.fields?.date;
 
   useEffect(() => {
     document.getElementById(current?.id)?.scrollIntoView({
@@ -94,8 +93,8 @@ const Home = props => {
         <meta charSet="utf-8" />
         <title>
           📖 Eric's Journal{" "}
-          {currentPostDate &&
-            `| ${new Date(currentPostDate).toLocaleString("en-CA", {
+          {current &&
+            `| ${new Date(current?.fields?.date).toLocaleString("en-CA", {
               month: "short",
               day: "numeric"
             })}`}
