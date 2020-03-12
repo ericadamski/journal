@@ -105,11 +105,11 @@ const Home = props => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="og:title"
-          content={`📖 Eric's Journal ${current &&
+          content={`📖 Eric's Journal ${current ?
             `| ${new Date(current?.fields?.date).toLocaleString("en-CA", {
               month: "short",
               day: "numeric"
-            })}`}`}
+            })}`}` : ''}
         />
         <link rel="shortcut icon" href="/favicon.png" />
         <meta name="og:url" content="https://journal.ericadamski.dev" />
