@@ -105,11 +105,14 @@ const Home = props => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="og:title"
-          content={`📖 Eric's Journal ${current ?
-            `| ${new Date(current?.fields?.date).toLocaleString("en-CA", {
-              month: "short",
-              day: "numeric"
-            })}`}` : ''}
+          content={`📖 Eric's Journal ${
+            current
+              ? `| ${new Date(current?.fields?.date).toLocaleString("en-CA", {
+                  month: "short",
+                  day: "numeric"
+                })}`
+              : ""
+          }`}
         />
         <link rel="shortcut icon" href="/favicon.png" />
         <meta name="og:url" content="https://journal.ericadamski.dev" />
@@ -261,6 +264,12 @@ const Home = props => {
           </>
         )}
       </div>
+      <style global jsx>{`
+        img {
+          max-width: 500px;
+          padding: 1rem;
+        }
+      `}</style>
       <style jsx>{`
         .entries {
           position: relative;
